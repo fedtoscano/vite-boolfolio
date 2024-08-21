@@ -1,31 +1,33 @@
 <script>
 import axios from 'axios';
+import ProjectCard from './partials/ProjectCard.vue';
 
 export default {
-  data() {
+  components: {ProjectCard},
+data() {
     return {
-    };
+      projects: [],
+
+    }
   },
-  methods: {
+methods: {
     getProjectsData() {
-      axios.get('http://127.0.0.1:8000/api/projects', {
+        axios.get('http://127.0.0.1:8000/api/projects', {
         params: {
-          // You can add query parameters here if needed
         }
         })
         .then(response => {
-            console.log('ciao');
-            console.log(response.data);
+            // console.log(response.data.results);
+            this.projects = response.data.results;
         })
         .catch(error => {
             console.log(error);
         })
         .finally(() => {
-            // always executed
         });
     }
   },
-  mounted() {
+  created() {
     this.getProjectsData();
   }
 };
@@ -33,8 +35,18 @@ export default {
 
 <template>
     <h1>AppMain</h1>
-    
+    <div class="container">
+      <ProjectCard v-for="project in projects"
+      :key="project.id"
+      :title="project.name"
+      :description="project.description"
+      :project_img="project.image"
+      />
+
+    </div>
+
 </template>
 
 <style scoped>
+
 </style>
