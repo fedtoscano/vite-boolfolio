@@ -33,8 +33,6 @@ export default {
     loadMoreProjects() {
       if (this.currentPage < this.totalPages) {
         this.getProjectsData(this.currentPage + 1);
-      } else {
-        console.log('Non ci sono più progetti da caricare.');
       }
     },
   },
@@ -49,11 +47,13 @@ export default {
     <h1>Project List</h1>
     <div class="row d-flex">
       <div class="col-3 my-3" v-for="(project, index) in projects" :key="index">
-        <ProjectCard
-          :title="project.name"
-          :description="project.description"
-          :project_img="project.image"
-        />
+        <RouterLink :to="{name: 'single-project', params: { id: project.id }}">
+          <ProjectCard
+            :title="project.name"
+            :description="project.description"
+            :project_img="project.image"
+          />
+        </RouterLink>
       </div>
     </div>
     <div class="button-container text-center" v-if="currentPage < totalPages">
@@ -64,5 +64,5 @@ export default {
 
 <style scoped lang="scss">
 @use '../styles/AppMain.scss';
-@use '../styles/partials/LoadMoreButton.scss'
+@use '../styles/partials/LoadMoreButton.scss';
 </style>
