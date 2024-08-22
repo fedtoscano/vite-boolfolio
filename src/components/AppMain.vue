@@ -17,8 +17,8 @@ methods: {
         }
         })
         .then(response => {
-            // console.log(response.data.results);
-            this.projects = response.data.results;
+            console.log(response.data.results);
+            this.projects = response.data.results.data;
         })
         .catch(error => {
             console.log(error);
@@ -35,18 +35,24 @@ methods: {
 
 <template>
     <h1>AppMain</h1>
-    <div class="container">
-      <ProjectCard v-for="project in projects"
-      :key="project.id"
-      :title="project.name"
-      :description="project.description"
-      :project_img="project.image"
-      />
 
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <ProjectCard v-for="project, index in projects"
+          :key="index"
+          :title="project.name"
+          :description="project.description"
+          :project_img="project.image"
+          />
+        </div>
+      </div>
     </div>
 
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use '../styles/AppMain.scss';
 
 </style>

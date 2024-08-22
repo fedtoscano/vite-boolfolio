@@ -20,5 +20,7 @@ return {
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '../../styles/partials/ProjectCard.scss';
+
 </style>

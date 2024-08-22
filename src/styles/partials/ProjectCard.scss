@@ -1,0 +1,25 @@
+.project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: #333;
+    }
+  
+    &__description {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: #666;
+    }
+}
+  

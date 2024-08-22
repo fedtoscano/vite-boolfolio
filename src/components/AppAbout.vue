@@ -7,8 +7,8 @@ return {
 </script>
 
 <template>
-    <h1>AppHeader</h1>
+    <h1>AppAbout.vue!</h1>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 </style>
