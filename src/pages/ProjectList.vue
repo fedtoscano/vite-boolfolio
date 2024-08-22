@@ -56,7 +56,7 @@ export default {
         />
       </div>
     </div>
-    <div class="button-container" v-if="currentPage < totalPages">
+    <div class="button-container text-center" v-if="currentPage < totalPages">
       <button @click="loadMoreProjects">Load More</button>
     </div>
   </div>
@@ -64,4 +64,5 @@ export default {
 
 <style scoped lang="scss">
 @use '../styles/AppMain.scss';
+@use '../styles/partials/LoadMoreButton.scss'
 </style>
