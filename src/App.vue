@@ -13,7 +13,8 @@ return {
 
 <template>
 <AppHeader/>
-<AppMain/>
+<!-- <AppMain/> -->
+<router-view></router-view>
 <AppFooter/>
 </template>
 

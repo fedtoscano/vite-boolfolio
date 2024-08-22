@@ -1,13 +1,12 @@
 <script>
 import axios from 'axios';
-import ProjectCard from './partials/ProjectCard.vue';
+import ProjectCard from '../components/partials/ProjectCard.vue';
 
 export default {
   components: {ProjectCard},
 data() {
     return {
       projects: [],
-
     }
   },
 methods: {
@@ -34,19 +33,20 @@ methods: {
 </script>
 
 <template>
-  <div class="container">
-      <h1>Project List</h1>
-      <div class="row d-flex">
-        <div class="col-3 my-3" v-for="project, index in projects">
-          <ProjectCard :key="index"
-          :title="project.name"
-          :description="project.description"
-          :project_img="project.image"/>
+    <div class="container">
+        <h1>Project List</h1>
+        <div class="row d-flex">
+            <div class="col-3 my-3" v-for="project, index in projects">
+                <ProjectCard :key="index"
+                :title="project.name"
+                :description="project.description"
+                :project_img="project.image"/>
+            </div>
         </div>
-      </div>
     </div>
 </template>
 
 <style scoped lang="scss">
 @use '../styles/AppMain.scss';
+
 </style>

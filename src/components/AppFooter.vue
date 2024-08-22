@@ -17,5 +17,6 @@ return {
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '../styles/AppFooter.scss'
 </style>
