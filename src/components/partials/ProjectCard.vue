@@ -1,8 +1,10 @@
 <script>
 export default {
-    props: {title:{type: String, required: true}, 
+    props: {
+    title:{type: String, required: true}, 
     description: {type: String, required: true},
-project_img:{type: String, required: true}},
+    project_img:{type: String, required: true}
+},
 data() {
 return {  
 }

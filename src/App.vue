@@ -13,7 +13,6 @@ return {
 
 <template>
 <AppHeader/>
-<!-- <AppMain/> -->
 <router-view></router-view>
 <AppFooter/>
 </template>
@@ -21,5 +20,4 @@ return {
 <style lang="scss">
 @use './styles/general.scss';
 @use './styles/partials/variables.scss';
-
 </style> 

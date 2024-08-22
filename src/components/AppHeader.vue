@@ -3,23 +3,36 @@ export default {
 data() {
 return { 
     navLinks: [
-        'Home', 'About', 'Blog'
+        {
+            label: 'Blog',
+            link: 'blog'
+        },
+        {
+            label: 'Projects',
+            link: 'projects'
+        },
+        {
+            label: 'About',
+            link: 'about'
+        },
     ] 
 }
 }}
 </script>
 
 <template>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-6">
             <h1>MY PROJECTS PORTFOLIO</h1>
         </div>
-        <div class="col-6">
+        <div class="col-6 left-side-navbar">
             <nav>
                 <ul>
-                    <li v-for="navLink, index in navLinks">
-                        {{ navLink }}
+                    <li v-for="navLink, index in navLinks" :key="index">
+                        <RouterLink :to="{name: navLink.link}">
+                            {{ navLink.label }}
+                        </RouterLink>
                     </li>
                 </ul>
             </nav>
