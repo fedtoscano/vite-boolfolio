@@ -17,7 +17,6 @@ return {
         <div class="project-card__content">
             <h2 class="project-card__title">{{ title }}</h2>
             <p class="project-card__description">{{ description }}</p>
-            <!-- <a :href="project.link" class="project-card__link">View Project</a> -->
         </div>
     </div>
 </template>
