@@ -34,18 +34,16 @@ methods: {
 </script>
 
 <template>
-    <h1>AppMain</h1>
-
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <ProjectCard v-for="project, index in projects"
-          :key="index"
+  
+  
+  <div class="container">
+      <h1>Project List</h1>
+      <div class="row d-flex">
+        <div class="col-3 my-3" v-for="project, index in projects">
+          <ProjectCard :key="index"
           :title="project.name"
           :description="project.description"
-          :project_img="project.image"
-          />
+          :project_img="project.image"/>
         </div>
       </div>
     </div>
